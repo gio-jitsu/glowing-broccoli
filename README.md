@@ -52,3 +52,4 @@ Poi apri `http://localhost:8080/`.
 - Toggle contrasto elevato persistente
 - `prefers-reduced-motion` rispettato
 # glowing-broccoli
+# glowing-broccoli
