@@ -1,0 +1,436 @@
+/* ============================================
+   SECONDLIFE — Bottega del riuso, Alessandria
+   Estetica post-industriale, scoped sotto .sl-page
+   ============================================ */
+
+.sl-page {
+    --sl-cement:     #1a1816;
+    --sl-cement-2:   #24211e;
+    --sl-cement-3:   #2e2a24;
+    --sl-paper:      #f2e9d3;
+    --sl-bone:       #e8e2d4;
+    --sl-bone-soft:  #c8c0ad;
+    --sl-yellow:     #e8a93b;
+    --sl-yellow-dk:  #a87f25;
+    --sl-red:        #c8232c;
+    --sl-red-dk:     #9b1a22;
+
+    background: var(--sl-cement);
+    color: var(--sl-bone);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.sl-page .sl-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* =========================
+   HERO
+   ========================= */
+.sl-hero {
+    position: relative;
+    height: clamp(520px, 88vh, 820px);
+    overflow: hidden;
+    background: #0e0d0c;
+}
+.sl-hero-img {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(.5) contrast(1.08) saturate(.95);
+}
+.sl-hero-grain {
+    position: absolute; inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 70%, transparent 0%, rgba(0,0,0,.55) 100%),
+        linear-gradient(180deg, rgba(0,0,0,.3) 0%, transparent 30%, transparent 70%, rgba(0,0,0,.7) 100%);
+    pointer-events: none;
+}
+.sl-hero-inner {
+    position: relative; z-index: 2;
+    width: 100%; max-width: 1280px;
+    margin: 0 auto;
+    padding: 6rem 1.5rem 5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.sl-hero-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .35em;
+    font-size: .78rem;
+    color: var(--sl-yellow);
+    margin: 0 0 1.6rem;
+    font-weight: 600;
+}
+.sl-page .sl-hero h1 {
+    font-family: var(--font-serif);
+    font-weight: 900;
+    color: #fff;
+    font-size: clamp(3rem, 10vw, 7.5rem);
+    line-height: .9;
+    letter-spacing: -.025em;
+    margin: 0 0 1.2rem;
+    text-transform: uppercase;
+}
+.sl-hero h1 .sl-accent { color: var(--sl-red); }
+.sl-hero-lead {
+    color: var(--sl-bone);
+    font-size: clamp(1rem, 1.4vw, 1.18rem);
+    line-height: 1.55;
+    max-width: 580px;
+    margin: 0;
+}
+.sl-hero-scroll {
+    position: absolute;
+    left: 50%; bottom: 1.5rem;
+    transform: translateX(-50%);
+    color: var(--sl-yellow);
+    font-size: .7rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    opacity: .8;
+}
+
+/* =========================
+   STRIPE — striscia rossa diagonale
+   ========================= */
+.sl-stripe {
+    position: relative;
+    height: 28px;
+    background: var(--sl-red);
+    width: 110%;
+    margin-left: -5%;
+    transform: skewY(-1.2deg);
+    z-index: 3;
+    box-shadow: 0 6px 18px rgba(0,0,0,.4);
+}
+.sl-stripe--thin { height: 10px; }
+
+/* =========================
+   SECTION
+   ========================= */
+.sl-section {
+    padding: 6rem 0;
+    position: relative;
+}
+.sl-section-num {
+    position: absolute;
+    top: 1.4rem;
+    right: 2rem;
+    font-family: var(--font-serif);
+    font-weight: 900;
+    font-size: clamp(4rem, 12vw, 9rem);
+    color: var(--sl-red);
+    line-height: 1;
+    opacity: .13;
+    pointer-events: none;
+    user-select: none;
+}
+.sl-section-head { margin-bottom: 3rem; max-width: 720px; }
+.sl-section-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    font-size: .72rem;
+    color: var(--sl-yellow);
+    margin: 0 0 1rem;
+    font-weight: 600;
+}
+.sl-page .sl-section h2 {
+    font-family: var(--font-serif);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    color: #faf6f0;
+    line-height: 1;
+    letter-spacing: -.015em;
+    margin: 0 0 1.2rem;
+}
+.sl-section p { color: var(--sl-bone-soft); line-height: 1.65; }
+
+/* =========================
+   MARQUEE — vetrina ambient
+   ========================= */
+.sl-marquee {
+    overflow: hidden;
+    position: relative;
+    margin-top: 3rem;
+    border-top: 1px solid var(--sl-cement-3);
+    border-bottom: 1px solid var(--sl-cement-3);
+    padding: 2.5rem 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+.sl-marquee-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    animation: sl-scroll 48s linear infinite;
+}
+.sl-marquee:hover .sl-marquee-track { animation-play-state: paused; }
+.sl-marquee-item {
+    flex: 0 0 auto;
+    height: clamp(280px, 42vw, 440px);
+    border: 2px solid var(--sl-cement-3);
+    background: #000;
+}
+.sl-marquee-item img {
+    height: 100%;
+    width: auto;
+    display: block;
+    object-fit: cover;
+}
+@keyframes sl-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* =========================
+   SHELF — griglia prodotti tipo scaffale
+   ========================= */
+.sl-shelf {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 4px solid var(--sl-yellow);
+    background: var(--sl-yellow);
+    margin-top: 3rem;
+}
+@media (max-width: 900px) { .sl-shelf { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .sl-shelf { grid-template-columns: 1fr; } }
+
+.sl-cell {
+    position: relative;
+    background: var(--sl-cement-2);
+    border: 4px solid var(--sl-yellow);
+    margin: -2px;
+    aspect-ratio: 1 / 1.15;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.25rem;
+    transition: background .25s ease;
+}
+.sl-cell:hover { background: #2c2924; z-index: 2; }
+.sl-cell:hover .sl-tag { transform: rotate(-1deg) translate(-4px, -6px); }
+
+.sl-cell-photo {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.sl-cell-photo--empty {
+    background:
+        repeating-linear-gradient(45deg,
+            transparent 0 14px,
+            rgba(232,169,59,.05) 14px 15px),
+        var(--sl-cement-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4a4540;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .28em;
+    font-weight: 600;
+}
+.sl-cell-photo--empty::before {
+    content: '⬚  foto in arrivo';
+}
+
+.sl-cell-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 45%, rgba(0,0,0,.85) 100%);
+    pointer-events: none;
+}
+
+.sl-cell-info {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.sl-cell-meta { max-width: 60%; }
+.sl-cell-cat {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: .22em;
+    font-size: .65rem;
+    color: var(--sl-yellow);
+    margin-bottom: .35rem;
+    font-weight: 700;
+}
+.sl-cell-name {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    color: #faf6f0;
+    font-size: .95rem;
+    line-height: 1.3;
+    margin: 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,.7);
+}
+
+/* =========================
+   PRICE TAG — etichetta vintage
+   ========================= */
+.sl-tag {
+    background: var(--sl-paper);
+    color: var(--sl-cement);
+    padding: .55rem .95rem .55rem 1.5rem;
+    transform: rotate(-2.5deg);
+    box-shadow: 0 6px 14px rgba(0,0,0,.5), inset 0 0 0 1px rgba(0,0,0,.08);
+    clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%, 0 10px);
+    position: relative;
+    min-width: 78px;
+    text-align: right;
+    transition: transform .25s ease;
+    flex: 0 0 auto;
+}
+.sl-tag::before {
+    content: '';
+    position: absolute;
+    left: 7px; top: 7px;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--sl-cement);
+}
+.sl-tag-price {
+    font-family: var(--font-serif);
+    font-weight: 900;
+    font-size: 1.4rem;
+    line-height: 1;
+    display: block;
+    letter-spacing: -.02em;
+}
+.sl-tag-lot {
+    font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    font-size: .58rem;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    color: #6b5b3e;
+    margin-top: .2rem;
+    display: block;
+}
+
+/* =========================
+   VISIT — contatti / vieni a trovarci
+   ========================= */
+.sl-visit {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    margin-top: 3rem;
+}
+@media (max-width: 800px) { .sl-visit { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+.sl-visit-info p { color: var(--sl-bone-soft); }
+.sl-visit-info strong { color: #faf6f0; }
+
+.sl-visit-meta {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    border-top: 1px solid var(--sl-cement-3);
+}
+.sl-visit-meta li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--sl-cement-3);
+}
+.sl-visit-meta .sl-meta-label {
+    text-transform: uppercase;
+    letter-spacing: .22em;
+    font-size: .72rem;
+    color: var(--sl-yellow);
+    font-weight: 700;
+    flex: 0 0 auto;
+}
+.sl-visit-meta .sl-meta-val {
+    color: #faf6f0;
+    text-align: right;
+    font-weight: 500;
+}
+
+.sl-visit-side {
+    background: var(--sl-cement-2);
+    padding: 2.5rem 2rem;
+    border-left: 4px solid var(--sl-red);
+}
+.sl-visit-side h3 {
+    font-family: var(--font-serif);
+    text-transform: uppercase;
+    color: #faf6f0;
+    font-size: 1.4rem;
+    margin: 0 0 1rem;
+}
+.sl-visit-side p { margin-bottom: 1.5rem; }
+
+/* =========================
+   BUTTONS & LINKS
+   ========================= */
+.sl-btn {
+    display: inline-block;
+    background: var(--sl-red);
+    color: #fff;
+    padding: 1rem 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    font-size: .82rem;
+    font-weight: 700;
+    border: 2px solid var(--sl-red);
+    cursor: pointer;
+    transition: background .2s, color .2s, transform .2s;
+}
+.sl-btn:hover {
+    background: transparent;
+    color: var(--sl-red);
+    transform: translate(-2px, -2px);
+}
+
+.sl-back {
+    display: inline-block;
+    margin-top: 3rem;
+    color: var(--sl-yellow);
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .25em;
+    font-weight: 600;
+    transition: color .2s;
+}
+.sl-back:hover { color: var(--sl-red); }
+
+/* =========================
+   SITE HEADER override (transparency on hero)
+   ========================= */
+body:has(.sl-page) .site-header {
+    background: rgba(20, 18, 16, 0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--sl-cement-3);
+}
+body:has(.sl-page) .site-header .brand-text strong,
+body:has(.sl-page) .site-header .brand-text em,
+body:has(.sl-page) .primary-nav a {
+    color: #faf6f0;
+}
+
+/* =========================
+   REDUCED MOTION
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+    .sl-marquee-track { animation: none; }
+    .sl-cell, .sl-tag, .sl-btn { transition: none; }
+}
