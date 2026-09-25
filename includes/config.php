@@ -4,12 +4,19 @@ $site = [
     'name'        => 'Il Pane e le Rose',
     'tagline'     => 'Cooperativa Sociale Onlus',
     'claim'       => 'Lavoro, dignità, comunità — dal 1987',
-    'email'       => 'info@ilpaneelerose.it',
-    'pec'         => 'ilpaneelerose@pec.it',
+    'email'       => 'socialeilpaneelerose@virgilio.it',
+    'pec'         => 'coop.ilpanelerose@pec.it',
     'sede_legale' => 'Casa di Quartiere, Alessandria',
-    'sedi'        => ['Bergamasco', 'Ponzone', 'Visone', 'Frascaro', 'Mignanego', 'Genova — Via Buozzi'],
+    'sedi'        => ['Ponzone', 'Frascaro', 'Mignanego', 'Genova — Via Buozzi'],
     'anno'        => date('Y'),
     'base_url'    => '',
+];
+
+// Bilanci sociali (documenti PDF)
+$bilanci_sociali = [
+    ['anno' => 2025, 'file' => '/docs/bilanci-sociali/bilancio-sociale-2025.pdf'],
+    ['anno' => 2024, 'file' => '/docs/bilanci-sociali/bilancio-sociale-2024.pdf'],
+    ['anno' => 2023, 'file' => '/docs/bilanci-sociali/bilancio-sociale-2023.pdf'],
 ];
 
 // Voci di navigazione (anchor sulla home)
@@ -28,7 +35,7 @@ $attivita = [
     [
         'icon'  => 'wheat',
         'titolo'=> 'Agricoltura',
-        'desc'  => 'Coltivazioni orto-frutticole nelle sedi di Bergamasco, Ponzone, Visone e Frascaro. Filiera corta e qualità.',
+        'desc'  => 'Coltivazioni orto-frutticole nelle sedi di Ponzone e Frascaro. Filiera corta e qualità.',
     ],
     [
         'icon'      => 'fork',

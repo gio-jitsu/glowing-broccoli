@@ -46,7 +46,7 @@ include __DIR__ . '/includes/header.php';
                 </p>
                 <p>
                     Costituita nel 1987 come cooperativa agricola di Tipo B, opera in diverse sedi
-                    in provincia di Alessandria (Bergamasco, Ponzone, Visone, Frascaro) e in
+                    in provincia di Alessandria (Ponzone, Frascaro) e in
                     provincia di Genova (Mignanego e Via Buozzi). Il 21/12/2004 ha adottato un
                     nuovo statuto, diventando più autonoma con il nome attuale.
                 </p>

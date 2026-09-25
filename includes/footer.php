@@ -24,6 +24,17 @@
             </p>
         </div>
 
+        <?php if (!empty($bilanci_sociali)): ?>
+        <div class="footer-col">
+            <h3 class="footer-title">Bilanci sociali</h3>
+            <ul class="plain-list">
+                <?php foreach ($bilanci_sociali as $bilancio): ?>
+                    <li><a href="<?= $base . htmlspecialchars($bilancio['file']) ?>" target="_blank" rel="noopener">Bilancio Sociale <?= htmlspecialchars($bilancio['anno']) ?></a></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php endif; ?>
+
         <div class="footer-col">
             <h3 class="footer-title">Resta in contatto</h3>
             <form class="newsletter" id="newsletter" novalidate>
