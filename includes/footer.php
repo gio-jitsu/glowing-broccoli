@@ -34,16 +34,6 @@
             </ul>
         </div>
         <?php endif; ?>
-
-        <div class="footer-col">
-            <h3 class="footer-title">Resta in contatto</h3>
-            <form class="newsletter" id="newsletter" novalidate>
-                <label for="nl-email" class="sr-only">La tua email</label>
-                <input type="email" id="nl-email" name="email" placeholder="La tua email" required>
-                <button type="submit" class="btn btn-rose">Iscrivimi</button>
-                <p class="form-feedback" role="status" aria-live="polite"></p>
-            </form>
-        </div>
     </div>
 
     <div class="footer-bottom">
